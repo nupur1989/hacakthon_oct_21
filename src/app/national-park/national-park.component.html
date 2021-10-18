@@ -1,0 +1,29 @@
+<p>national-park works!</p>
+
+<form [formGroup]= "parksDetailsFrom">
+<label>Search National Parks</label>
+<input formControlName ="searchInputText" type ="text"/>
+</form>
+
+<table style="width:100%">
+    <tr>
+       <th>Name</th>
+       <th>Image</th> 
+       <th>Location</th>
+       <th>Date Founded</th>
+       <th>Area</th>
+       <th>Visitors</th>
+    </tr>
+
+    <tr *ngFor=" let park of nationalParks">
+        <td>{{park.name}}</td>
+        <td><img [src]="park.photo"></td>
+        <td>{{park.location}}</td>
+        <td>{{park.dateFounded}}</td>
+        <td>{{park.area}}</td>
+        <td>{{park.visitors}}</td>
+    </tr>
+
+</table>
+
+

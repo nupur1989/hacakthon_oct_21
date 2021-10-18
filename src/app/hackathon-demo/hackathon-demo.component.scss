@@ -1,0 +1,59 @@
+
+.main-container{
+
+  margin-left:  100px;
+  font-family: Helvetica, sans-serif;
+  
+}
+
+table {
+    width: 100%;
+    color: black;
+    column-rule-color: none;
+    font-family: Helvetica, sans-serif
+  }
+
+  .example-tab-icon {
+    margin-right: 8px;
+  }
+
+  .mat-cell{
+    font-size:12px;
+    font-family: Helvetica, sans-serif;
+    height: 48px;
+    }
+
+    td.mat-cell{
+        border-bottom-style: none;
+    }
+
+    tr.mat-row:hover {
+        background-color: #DCDCDC;
+      }
+  
+    th.mat-header-cell{
+        border-bottom-style:solid;
+        border-color:#DCDCDC;
+    }
+    
+    .example-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #eee;
+    }
+
+    .sidebarDiv {
+      background:#DCDCDC;
+    }
+
+    .search-input{
+      border-radius: 20px !important;
+      border-color: transparent;
+      width: 400px;
+      height: 30px;
+      background-color: #DCDCDC;
+
+    }
