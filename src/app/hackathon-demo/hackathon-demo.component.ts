@@ -13,24 +13,60 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: MeetingInfo[] = [
   {
-    name: "name1",
-      date: "10jan 2020",
+    name: "Nupur Kohli's Personal Room",
+      date: "02/18/2021 2:08 pm",
       recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP$",
       summary: "summary"},
 
-      {name: "name2",
-      date: "10jan 2020",
+      {name: "Webex Team meeting-20180912",
+      date: "02/18/2021 2:08 pm",
       recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP$",
       summary: "summary"},
 
-      {name: "name3",
-      date: "10jan 2020",
+      {name: "Webex Team meeting-20191214",
+      date: "02/23/2021 2:08 pm",
       recording: "recording link",
+      duration: "0:01:50",
+      summary: "summary",
+      size: "9.8MB",
+      format: "MP$"},
+
+      {name: "Webex Team meeting-20201213",
+      date: "02/20/2021 2:08 pm",
+      recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP4",
       summary: "summary"},
 
-      {name: "name4",
-      date: "10jan 2020",
+      {name: "Webex Team meeting-20201213",
+      date: "02/20/2021 2:08 pm",
       recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP4",
+      summary: "summary"},
+
+      {name: "Webex Team meeting-20201213",
+      date: "02/20/2021 2:08 pm",
+      recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP4",
+      summary: "summary"},
+
+      {name: "Webex Team meeting-20201213",
+      date: "02/20/2021 2:08 pm",
+      recording: "recording link",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP4",
       summary: "summary"},
  
 ];
@@ -47,7 +83,7 @@ interface Record {
 })
 export class HackathonDemoComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'date', 'recording', 'summary'];
+  displayedColumns: string[] = ['name', 'date', 'recording','duration', 'size' ,'format', 'summary'];
   dataSource = ELEMENT_DATA;
   
   meetings : MeetingInfo[] = [];
@@ -86,7 +122,10 @@ export class HackathonDemoComponent implements OnInit {
       name:"name1",
       date: "10jan 2020",
       recording: "recording link",
-      summary: "summary"
+      summary: "summary",
+      duration: "0:01:50",
+      size: "9.8MB",
+      format: "MP4"
     }
 
     this.meetings.push(meeting1);

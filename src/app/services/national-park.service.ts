@@ -7,7 +7,10 @@ export interface MeetingInfo{
 
   name: string,
   date: string,
-  recording: string,
+  recording?: string,
+  duration: string,
+  size: string,
+  format: string,
   summary: string,
 }
 
