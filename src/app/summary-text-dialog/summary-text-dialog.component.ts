@@ -10,7 +10,6 @@ export class SummaryTextDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<SummaryTextDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any){}
-    
 
   onNoClick(): void {
     this.dialogRef.close();

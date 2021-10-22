@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NationalParkComponent } from './national-park/national-park.component';
 import { HackathonDemoComponent } from './hackathon-demo/hackathon-demo.component';
 import { SummaryTextDialogComponent } from './summary-text-dialog/summary-text-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
@@ -43,7 +43,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSelectModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent],
   entryComponents: [
     SummaryTextDialogComponent

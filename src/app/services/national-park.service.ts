@@ -32,6 +32,7 @@ export class NationalParkService {
 
   url = "https://gist.githubusercontent.com/afiedler/3f388de6159f84bbe330e1a8289006a6/raw/59a2f67bbe0e4891bba22241406d7bd93bd8fb6b/parks.json";
   
+  pingUrl= "https://wap-notification-service.intc1.ciscospark.com/wpns/api/v1/ping"
   meetingInfoUrl = "locus/myMeetings/userId";
   meetingSummaryUrl = "wpns/v2/meetingSummary/meetingId";
   
@@ -49,6 +50,10 @@ export class NationalParkService {
 
   getMySummary() : Observable<string>{
     //return this.http.get<string>(this.meetingSummaryUrl);
-    return of('dummydata');
+    return of('This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test This is Smmary test');
+  }
+
+  getPingData() : Observable<string>{
+    return this.http.get<string>(this.pingUrl);
   }
 }

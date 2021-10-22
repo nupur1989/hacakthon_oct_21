@@ -3,13 +3,6 @@ import { MeetingInfo, NationalParkService } from '../services/national-park.serv
 import {MatDialog} from '@angular/material/dialog';
 import { SummaryTextDialogComponent } from '../summary-text-dialog/summary-text-dialog.component';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
 
 const ELEMENT_DATA: MeetingInfo[] = [
   {
@@ -18,24 +11,24 @@ const ELEMENT_DATA: MeetingInfo[] = [
       recording: "recording link",
       duration: "0:01:50",
       size: "9.8MB",
-      format: "MP$",
-      summary: "summary"},
+      format: "MP4",
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20180912",
       date: "02/18/2021 2:08 pm",
       recording: "recording link",
       duration: "0:01:50",
       size: "9.8MB",
-      format: "MP$",
-      summary: "summary"},
+      format: "MP4",
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20191214",
       date: "02/23/2021 2:08 pm",
       recording: "recording link",
       duration: "0:01:50",
-      summary: "summary",
       size: "9.8MB",
-      format: "MP$"},
+      format: "MP4",
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20201213",
       date: "02/20/2021 2:08 pm",
@@ -43,7 +36,7 @@ const ELEMENT_DATA: MeetingInfo[] = [
       duration: "0:01:50",
       size: "9.8MB",
       format: "MP4",
-      summary: "summary"},
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20201213",
       date: "02/20/2021 2:08 pm",
@@ -51,7 +44,7 @@ const ELEMENT_DATA: MeetingInfo[] = [
       duration: "0:01:50",
       size: "9.8MB",
       format: "MP4",
-      summary: "summary"},
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20201213",
       date: "02/20/2021 2:08 pm",
@@ -59,7 +52,7 @@ const ELEMENT_DATA: MeetingInfo[] = [
       duration: "0:01:50",
       size: "9.8MB",
       format: "MP4",
-      summary: "summary"},
+      summary: "Summary"},
 
       {name: "Webex Team meeting-20201213",
       date: "02/20/2021 2:08 pm",
@@ -67,7 +60,7 @@ const ELEMENT_DATA: MeetingInfo[] = [
       duration: "0:01:50",
       size: "9.8MB",
       format: "MP4",
-      summary: "summary"},
+      summary: "Summary"},
  
 ];
 
@@ -88,6 +81,7 @@ export class HackathonDemoComponent implements OnInit {
   
   meetings : MeetingInfo[] = [];
   summary : string = 'summary';
+  pingData: string = 'test';
 
   recordOptions: Record[] = [
     {value: 'All', viewValue: 'All'},
@@ -97,9 +91,12 @@ export class HackathonDemoComponent implements OnInit {
   constructor(private nationalParkService: NationalParkService, private dialog: MatDialog) {
 
    }
-   openDialog(): void {
+   openDialog(summary: any): void {
     const dialogRef = this.dialog.open(SummaryTextDialogComponent, {
-      width: '500px'
+      data: {
+        width: '100px',
+        summary: summary
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -111,6 +108,8 @@ export class HackathonDemoComponent implements OnInit {
   ngOnInit(): void {
 
     this.getMeetings();
+
+    this.getPingData();
 
    
   }
@@ -130,16 +129,22 @@ export class HackathonDemoComponent implements OnInit {
 
     this.meetings.push(meeting1);
     this.meetings.push(meeting1);
-    this.meetings.push(meeting1);
+    this.meetings.push(meeting1);``
 
     //this.nationalParkService.getMeetingInfo().subscribe( meetings => this.meetings = meetings);
   }
 
   public getMeetingSummary() : void {
-    //console.log("test");
+    console.log("test");
 
-    this.openDialog();
-    //this.nationalParkService.getMySummary().subscribe(summary => this.summary = summary);
+    this.nationalParkService.getMySummary().subscribe( summary => {this.summary = summary
+      this.openDialog(this.summary);
+    });
     //return this.summary;
+  }
+
+  public getPingData() : void {
+    this.nationalParkService.getPingData().subscribe(pingData => this.pingData = pingData);
+    console.log(this.pingData);
   }
 }

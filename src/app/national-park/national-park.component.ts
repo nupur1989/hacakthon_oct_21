@@ -26,7 +26,6 @@ export class NationalParkComponent implements OnInit {
     this.getNationalParks();
 
     this.parksDetailsFrom.controls.searchInputText.valueChanges.subscribe(value => {
-      console.log(value);
       this.searchParks(value);
 });
   }
@@ -37,8 +36,8 @@ export class NationalParkComponent implements OnInit {
   }
 
   searchParks( input: string) : void{
-    debugger;
     this.nationalParks = this.nationalParks.filter( park => park.name.includes(input) || park.location.includes(input))
   }
+  
 
 }

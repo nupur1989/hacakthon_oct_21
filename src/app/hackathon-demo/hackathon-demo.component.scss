@@ -1,9 +1,22 @@
 
 .main-container{
-
   margin-left:  100px;
   font-family: Helvetica, sans-serif;
   
+}
+
+.toolbar-div{
+  margin-left: 100px;
+}
+
+.language{
+  font-size: small;
+  font-family: Helvetica, sans-serif;
+  margin-left: 600px;
+}
+.logged-user{
+  font-size: small;
+  font-family: Helvetica, sans-serif;
 }
 
 table {
@@ -11,6 +24,17 @@ table {
     color: black;
     column-rule-color: none;
     font-family: Helvetica, sans-serif
+  }
+
+  .mat-column-summary {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 10% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
   }
 
   .example-tab-icon {
@@ -34,6 +58,8 @@ table {
     th.mat-header-cell{
         border-bottom-style:solid;
         border-color:#DCDCDC;
+        font-size: large;
+       
     }
     
     .example-container {

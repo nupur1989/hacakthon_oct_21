@@ -23,12 +23,12 @@
     
     <div class="header-div">
         <mat-toolbar>
-          <div style="margin-left: 100px;">
+          <div class="toolbar-div">
             <mat-icon matPrefix>search</mat-icon>
             <input class="search-input" matInput type="search" placeholder="Search for a meeting" class="search-input">
-            <span style="margin-left: 650px;">English</span>
-            <span> | </span>
-            <span>User</span>
+            <span class="language">English</span>
+            <span class ="logged-user"> | </span>
+            <span class ="logged-user">User</span>
           </div>
         </mat-toolbar>
     <hr/>
@@ -92,7 +92,7 @@
     <!-- Summary Column -->
     <ng-container matColumnDef="summary">
       <th mat-header-cell *matHeaderCellDef> Summary </th>
-      <td mat-cell *matCellDef="let element"> {{element.summary}} </td>
+      <td mat-cell *matCellDef="let element"><a mat-stroked-button href="#" (click)="getMeetingSummary()">Summary</a></td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -100,8 +100,6 @@
   </table>
 
     </div>
-    
-
   </mat-sidenav-content>
 </mat-sidenav-container>
 
