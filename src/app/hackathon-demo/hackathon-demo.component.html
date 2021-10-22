@@ -31,7 +31,7 @@
             <span class ="logged-user">User</span>
           </div>
         </mat-toolbar>
-    <hr/>
+    <hr class="hr-div"/>
     </div>
 
     <div class="main-container">
@@ -68,7 +68,8 @@
     <!-- Recording Column -->
     <ng-container matColumnDef="recording">
       <th mat-header-cell *matHeaderCellDef> Recording Link </th>
-      <td mat-cell *matCellDef="let element"> {{element.recording}} </td>
+      <td mat-cell *matCellDef="let element"><a mat-stroked-button href="#">Recording</a></td>
+
     </ng-container>
 
     <!-- Duration Column -->
